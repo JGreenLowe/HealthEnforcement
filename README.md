@@ -6,32 +6,40 @@ This project analyzes California healthcare enforcement actions to explore conne
 Fines By Topic
 ============================
 Fines varied significantly by topic within the LDA model, suggesting areas where hospital administrators can focus their efforts to most efficiently reduce liability and promote patient health.
+
 ![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Fines-by-Topic.png)
 
 List of Trigrams
 ============================
 To process the raw text of the narrative reports, I used tools from the Spacy and Gensim libraries to lemmatize all words in the reports, stripping them of punctuation, whitespace, conjugation, capitalization, and stopwords. I then combined words that frequently occurred together into 2-word bigrams and 3-word trigrams to allow the models to take account of phrases that are more important than the sum of their parts.
+
 ![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/List-of-Trigrams.png)
 
 Categorical Fine Models
 ============================
 Different types of models were more effective for different types of prediction: the Gradient Boosting Machine was most effective for predicting what category of fine a report would be associated with (small, medium, or large), and the Random Forest Generator was most effective for estimating the exact amount of a fine to the nearest dollar.
+
 ![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Fine-Models.png)
 
 Intertopic Distance Map
 ============================
 Using Principal Component Analysis (PCA), it is possible to graph all of the topics on a two-dimensional grid, with greater distance between topics suggesting a greater difference in meaning. Although the dimensions in PCA are usually abstract, here the x-axis of the graph appears to have a concrete meaning, with topics that are further to the left placing a stronger emphasis on physical medicine, and topics that are further to the right placing a stronger emphasis on money, fraud, and paperwork. 
+
 ![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Intertopic-Distance-Map.png)
 
 Terms by Topic
 ============================
-Each of the eight primary topics is made up a list of words that define that topic. The image below is a snapshot of a visualization tool that allows viewers to explore the definition of each topic from a sliding scale of perspectives: as the slider bar moves to the right, the display shows words that are very common in both a specific topic and the general corpus, and as the slider bar moves to the left, the display shows words that are unique to a particular topic and do not appear often in the general corpus.
+Each of the eight primary topics is made up a list of words that define that topic. The image below is a snapshot of a [visualization tool](https://nbviewer.jupyter.org/github/JGreenLowe/HealthEnforcement/blob/master/models/lda.html) that allows viewers to explore the definition of each topic from a sliding scale of perspectives: as the slider bar moves to the right, the display shows words that are very common in both a specific topic and the general corpus, and as the slider bar moves to the left, the display shows words that are unique to a particular topic and do not appear often in the general corpus.
+
 ![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Terms-By-Topic.png)
 
 
-
 Project Organization
-------------
+=====================
+
+The project's files are organized using the cookie-cutter framework.
+
+--------------------
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
