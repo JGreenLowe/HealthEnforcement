@@ -31,7 +31,7 @@ Terms by Topic
 ============================
 Each of the eight primary topics is made up a list of words that define that topic. The image below is a snapshot of a [visualization tool](https://nbviewer.jupyter.org/github/JGreenLowe/HealthEnforcement/blob/master/models/lda.html) that allows viewers to explore the definition of each topic from a sliding scale of perspectives: as the slider bar moves to the right, the display shows words that are very common in both a specific topic and the general corpus, and as the slider bar moves to the left, the display shows words that are unique to a particular topic and do not appear often in the general corpus.
 
-![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Terms-By-Topic.png)
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Terms-by-Topic.png)
 
 
 Project Organization
