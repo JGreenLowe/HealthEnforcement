@@ -1,7 +1,16 @@
-Health
+Machine Learning in Health Care Enforcement
 ==============================
 
-This project analyzes California healthcare enforcement actions to explore patterns in when appeals will be successful.
+This project analyzes California healthcare enforcement actions to explore connections between the narrative text of accident reports and the size of the fines levied against hospitals and nursing homes. Using natural language processing tools and Latent Dirichlet Allocation (LDA) models, I identified 8 narrative topics in the 2,883 incident reports published by California's Department of Public Health. I then demonstrate that incidents with a primary topic of cardiovascular emergencies or elder abuse are associated with a fine of about $12,000 each, compared to an average of only $1,800 for incidents with a primary topic of diabetes or paperwork. The topics identified by the LDA model held up very well against new test data, and could be used to correctly identify 96% of the cases where the fine was over $5,000, even though only 27% of the total fines were over $5,000.
+
+Sample Images
+============================
+
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/Fines-by-Topic.png)
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/List-of-Trigrams.png)
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/Fine-Models.png)
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/Intertopic-Distance-Map.png)
+
 
 Project Organization
 ------------
