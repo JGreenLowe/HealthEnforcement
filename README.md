@@ -3,13 +3,31 @@ Machine Learning in Health Care Enforcement
 
 This project analyzes California healthcare enforcement actions to explore connections between the narrative text of accident reports and the size of the fines levied against hospitals and nursing homes. Using natural language processing tools and Latent Dirichlet Allocation (LDA) models, I identified 8 narrative topics in the 2,883 incident reports published by California's Department of Public Health. I then demonstrate that incidents with a primary topic of cardiovascular emergencies or elder abuse are associated with a fine of about $12,000 each, compared to an average of only $1,800 for incidents with a primary topic of diabetes or paperwork. The topics identified by the LDA model held up very well against new test data, and could be used to correctly identify 96% of the cases where the fine was over $5,000, even though only 27% of the total fines were over $5,000.
 
-Sample Images
+Fines By Topic
 ============================
+Fines varied significantly by topic within the LDA model, suggesting areas where hospital administrators can focus their efforts to most efficiently reduce liability and promote patient health.
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Fines-by-Topic.png)
 
-![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/Fines-by-Topic.png)
-![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/List-of-Trigrams.png)
-![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/Fine-Models.png)
-![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/Intertopic-Distance-Map.png)
+List of Trigrams
+============================
+To process the raw text of the narrative reports, I used tools from the Spacy and Gensim libraries to lemmatize all words in the reports, stripping them of punctuation, whitespace, conjugation, capitalization, and stopwords. I then combined words that frequently occurred together into 2-word bigrams and 3-word trigrams to allow the models to take account of phrases that are more important than the sum of their parts.
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/List-of-Trigrams.png)
+
+Categorical Fine Models
+============================
+Different types of models were more effective for different types of prediction: the Gradient Boosting Machine was most effective for predicting what category of fine a report would be associated with (small, medium, or large), and the Random Forest Generator was most effective for estimating the exact amount of a fine to the nearest dollar.
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Fine-Models.png)
+
+Intertopic Distance Map
+============================
+Using Principal Component Analysis (PCA), it is possible to graph all of the topics on a two-dimensional grid, with greater distance between topics suggesting a greater difference in meaning. Although the dimensions in PCA are usually abstract, here the x-axis of the graph appears to have a concrete meaning, with topics that are further to the left placing a stronger emphasis on physical medicine, and topics that are further to the right placing a stronger emphasis on money, fraud, and paperwork. 
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Intertopic-Distance-Map.png)
+
+Terms by Topic
+============================
+Each of the eight primary topics is made up a list of words that define that topic. The image below is a snapshot of a visualization tool that allows viewers to explore the definition of each topic from a sliding scale of perspectives: as the slider bar moves to the right, the display shows words that are very common in both a specific topic and the general corpus, and as the slider bar moves to the left, the display shows words that are unique to a particular topic and do not appear often in the general corpus.
+![](https://github.com/JGreenLowe/HealthEnforcement/blob/master/reports/figures/Terms-By-Topic.png)
+
 
 
 Project Organization
